@@ -14,6 +14,8 @@
 		9D4345F92214413B00B6FF19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D4345F72214413B00B6FF19 /* LaunchScreen.storyboard */; };
 		9D4346042214413B00B6FF19 /* profileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4346032214413B00B6FF19 /* profileTests.swift */; };
 		9D43460F2214413B00B6FF19 /* profileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D43460E2214413B00B6FF19 /* profileUITests.swift */; };
+		9D43461F2216F14900B6FF19 /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D43461E2216F14900B6FF19 /* Datas.swift */; };
+		9D4346212217970200B6FF19 /* PickerViewKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4346202217970200B6FF19 /* PickerViewKeyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		9D43460A2214413B00B6FF19 /* profileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = profileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D43460E2214413B00B6FF19 /* profileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileUITests.swift; sourceTree = "<group>"; };
 		9D4346102214413B00B6FF19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D43461E2216F14900B6FF19 /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
+		9D4346202217970200B6FF19 /* PickerViewKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +104,11 @@
 				9D4345EE2214413900B6FF19 /* AppDelegate.swift */,
 				9D4345F02214413900B6FF19 /* ViewController.swift */,
 				9D4345F22214413900B6FF19 /* Main.storyboard */,
+				9D4346202217970200B6FF19 /* PickerViewKeyboard.swift */,
 				9D4345F52214413B00B6FF19 /* Assets.xcassets */,
 				9D4345F72214413B00B6FF19 /* LaunchScreen.storyboard */,
 				9D4345FA2214413B00B6FF19 /* Info.plist */,
+				9D43461E2216F14900B6FF19 /* Datas.swift */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -257,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D4345F12214413900B6FF19 /* ViewController.swift in Sources */,
+				9D4346212217970200B6FF19 /* PickerViewKeyboard.swift in Sources */,
 				9D4345EF2214413900B6FF19 /* AppDelegate.swift in Sources */,
+				9D43461F2216F14900B6FF19 /* Datas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

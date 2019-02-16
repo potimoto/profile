@@ -10,34 +10,6 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate{
     
-    let Datalist1 = ["1","2","3","4"]
-    
-    let Datalist2 = ["A","B","C","D","E","F","G","H","I","J","K","L"]
-    
-    let Datalist3 = ["なし","e-Trap","FunAI","Multi-creators","PumpUpはこだて","はこだて祭ネット",
-                     "ボードゲーム部","生命・知     能探求者の集い","余ト市","BrassFAN","DARTS.FUN",
-                     "Fabガール","FUGU","FUNラジ","GATT","Illustrators","LoL部","SoundCreate",
-                     "Studio SUN","オーケストラ同好会","スマブラの会","デザイン・カルテット",
-                     "未来大ポケモンだいすきクラブ","奇術サークル","軽音楽部","写真部","池坊華道・表千家茶道部",
-                     "天文学部","美術サークル","放送局","麻雀サークル","未来祭実行委員","FUNキャンプ",
-                     "クルージング部","サバイバルゲーム部","弓道部","FUN卓球サークル","サッカー部",
-                     "ストリートダンスサークル「一気狂う」","ソフトテニス部","バドミントン部","ハンドボール部",
-                     "フットサルサークル","空手道部","剣道部","硬式テニス部サークル","硬式野球部","自転車部",
-                     "自動車部","女子バスケットボール部","女子バレーボール部","男子バスケットボール部",
-                     "男子バレーボール部","軟式野球部","函館学生連合～息吹～"]
-    
-    let Datalist4 = ["北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県",
-                     "茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県",
-                     "新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県",
-                     "静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県",
-                     "奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県",
-                     "徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県",
-                     "熊本県","大分県","宮崎県","鹿児島県","沖縄県"]
-    
-    let Datalist5 = ["スポーツ","テレビゲーム","読書","睡眠","プログラミング","映画鑑賞",
-                     "音楽鑑賞","ダンス","天体観測","カラオケ","登山","温泉巡り","食べ歩き",
-                     "芸術","テーブルゲーム","手芸","料理","なし"]
-    
     //let Datalist6 = [""] 属性を使うときはこのデータリストを使用
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -71,10 +43,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         }
     }
     
-    @IBOutlet weak var yearlabel: UILabel!
+  //  @IBOutlet weak var yearlabel: UILabel!
     
     @IBOutlet weak var clslabel: UILabel!
-    
+
     @IBOutlet weak var circlelabel: UILabel!
     
     @IBOutlet weak var fromlabel: UILabel!
@@ -102,6 +74,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     @IBOutlet weak var TextField: UITextField!
     
     @IBOutlet weak var ImageView: UIImageView!
+    
+    @IBOutlet weak var pickerKeyboardButton: PickerViewKeyboard!
+        
+    
+    
+    
     
     //カメラロールから写真を選択する処理
     @IBAction func ImageButton(_ sender: UIButton) {
@@ -141,7 +119,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         
         TextField.keyboardType = UIKeyboardType.default
         
-        year.delegate = self
+        /*year.delegate = self
         
         cls.delegate = self
         
@@ -155,7 +133,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         
         hobby3.delegate = self
         
-        year.dataSource = self
+        //year.dataSource = self
         
         cls.dataSource = self
         
@@ -167,10 +145,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         
         hobby2.dataSource = self
         
-        hobby3.dataSource = self
+        hobby3.dataSource = self*/
         
-        yearlabel.text = "1"
+        //yearlabel.text = "1"
         
+         pickerKeyboardButton.delegate = self
         // デフォルトの画像を表示する
         //ImageView.image = UIImage(named: "default.png")
     }
@@ -228,9 +207,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
                     didSelectRow row: Int,
                     inComponent component: Int) {
         
-        if pickerView == year{
+        /*if pickerView == year{
            yearlabel.text = Datalist1[row]
-        }
+        }*/
         if pickerView == cls{
            clslabel.text = Datalist2[row]
             
@@ -260,6 +239,25 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         self.ImageView.image = image
         // 写真を選ぶビューを引っ込める
         self.dismiss(animated: true)
+    }
+    
+}
+
+extension ViewController: PickerViewKeyboardDelegate {
+    func initSelectedRow(sender: PickerViewKeyboard) -> Int {
+        return 0
+    }
+    
+    func titlesOfPickerViewKeyboard(sender: PickerViewKeyboard) -> Array<String> {
+        return Datalist1
+    }
+    func didDone(sender: PickerViewKeyboard, selectedData: String) {
+        //yearlabel.text = selectedData
+        sender.resignFirstResponder()
+    }
+    func didCancel(sender: PickerViewKeyboard) {
+        print("canceled")
+        sender.resignFirstResponder()
     }
 }
 
